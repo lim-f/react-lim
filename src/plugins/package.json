@@ -1,6 +1,6 @@
 {
     "name": "react-lim",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "Make React easier to use.",
     "main": "react-lim.es.min.js",
     "module": "react-lim.es.min.js",

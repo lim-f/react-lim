@@ -8,7 +8,6 @@ import { defineConfig } from 'vite';
 import legacy from '@vitejs/plugin-legacy';
 import { resolve } from 'path';
 import { babel } from '@rollup/plugin-babel';
-import { buildPackageName, upcaseFirstLetter } from './build/utils';
 
 const Mode = {
     Dev: 'dev', // dev/index.ts
@@ -19,9 +18,9 @@ const Mode = {
 // @ts-ignore
 export default defineConfig(({ mode }: {mode: string}) => {
 
-    const [buildMode, format] = mode.split('_');
+    const [ buildMode, format ] = mode.split('_');
 
-    console.log('buildMode = ', buildMode)
+    console.log('buildMode = ', buildMode);
 
 
     const config = {

@@ -5,8 +5,10 @@
  */
 import { NodePath } from '@babel/traverse';
 import { ArrowFunctionExpression, FunctionDeclaration, Node } from '@babel/types';
-import { ArrayFnSet, SetPrefix, getMemberKey, isFunctionDeclaration, isJSXElement, t } from '../utils/ast-utils';
+import { ArrayFnSet, SetPrefix, getMemberKey, isFromImport, isFunctionDeclaration, isJSXElement, t } from '../utils/ast-utils';
 import { JSXParser } from './jsx-parser';
+
+const reactNames = new Set([ 'useState', 'useEffect', 'useCallback', 'useMemo', 'useRef', 'useContext' ]);
 
 interface IRefState{
     isModified: boolean;
@@ -45,7 +47,18 @@ export class ComponentParser {
                     // @ts-ignore
                     const name = declaration.id.name;
                     const binding = this.path.scope.getBinding(name);
-                    if (!binding) return;
+                    const init = declaration.init;
+                    if (!binding || !init) return;
+
+                    if (init.type === 'CallExpression') {
+                        // @ts-ignore
+                        const callName = init.callee.name;
+                        if (reactNames.has(callName)) {
+                            if (isFromImport(this.path, callName, 'react')) {
+                                return;
+                            }
+                        }
+                    }
 
                     const state: IRefState = { isModified: false, isState: false, name, refs: [] };
 
