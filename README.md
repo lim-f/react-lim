@@ -3,11 +3,11 @@
  * @Date: 2024-04-30 11:57:26
  * @Description: Coding something
 -->
-## [React Lim](https://github.com/theajack/react-lim)
+## [React Lim](https://github.com/lim-f/react-lim)
 
 Make React easier to use. - (Lim means 'Less is More')
 
-**[Playground](https://theakjack.github.io/react-lim) | [Vue-Lim](https://github.com/theajack/vue-lim) | [中文](https://github.com/theajack/react-lim/blob/master/README.cn.md)**
+**[Playground](https://lim-f.github.io/playground/#8) | [Vue-Lim](https://github.com/lim-f/vue-lim) | [中文](https://github.com/lim-f/react-lim/blob/master/README.cn.md)**
 
 
 ## A Simple Sample

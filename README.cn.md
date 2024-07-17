@@ -3,11 +3,11 @@
  * @Date: 2024-04-30 11:57:26
  * @Description: Coding something
 -->
-## [React Lim](https://github.com/theajack/react-lim)
+## [React Lim](https://github.com/lim-f/react-lim)
 
 让 React 使用起来更简单. （Lim 的含义是 'Less is More'）
 
-**[在线体验](https://theakjack.github.io/react-lim) | [Vue-Lim](https://github.com/theajack/vue-lim) | [English](https://github.com/theajack/react-lim)**
+**[在线体验](https://lim-f.github.io/playground/#8) | [Vue-Lim](https://github.com/lim-f/vue-lim) | [English](https://github.com/lim-f/react-lim)**
 
 
 ## 一个简单的例子

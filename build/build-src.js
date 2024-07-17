@@ -57,8 +57,8 @@ function main () {
         jsdelivr: iifeName,
         license: 'MIT',
         keywords: [ 'react', 'react-lim' ],
-        homepage: 'https://theajack.github.io/react-lim',
-        'repository': 'git@github.com:theajack/react-lim.git',
+        homepage: 'https://lim-f.github.io/playground/#8',
+        'repository': 'git@github.com:lim-f/react-lim.git',
         'author': 'tackchen <theajack@qq.com>',
         publishConfig: {
             registry: 'https://registry.npmjs.org',
