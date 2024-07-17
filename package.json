@@ -1,10 +1,10 @@
 {
-  "name": "vue-lim",
+  "name": "react-lim",
   "private": true,
   "scripts": {
     "dev": "vite -m=dev",
     "build": "node build/build-src.js",
-    "lint": "eslint packages --ext ts"
+    "lint": "eslint --fix src --ext ts"
   },
   "dependencies": {
       "@babel/core": "^7.24.7",

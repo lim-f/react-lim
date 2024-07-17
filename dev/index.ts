@@ -7,24 +7,41 @@
 
 import { transformReact } from '../src/index';
 
+// const input = `
+// function App() {
+//   let count = 1;
+//   const inc = () => {
+//     count++;
+//   };
+//   return /* @__PURE__ */ jsxDEV(Fragment, { children: /* @__PURE__ */ jsxDEV("button", { onClick: inc, children: [
+//     "count is ",
+//     count
+//   ] }, void 0, true, {
+//     fileName: "/Users/bytedance/code/tack/react-lim-template/src/App.tsx",
+//     lineNumber: 16,
+//     columnNumber: 7
+//   }, this) }, void 0, false, {
+//     fileName: "/Users/bytedance/code/tack/react-lim-template/src/App.tsx",
+//     lineNumber: 15,
+//     columnNumber: 10
+//   }, this);
+// }
+// `;
+
 const input = `
-
-export function Counter(){
-  let b = {a:1}
-  b++;
-  b.a ++;
-  b.a.c ++;
-  b = 1;
-  b.a = 1;
-
-  Object.assign(b, {a: 2});
-  delete b.a;
-
-  b.a.push(3);
-
-  return <div>{b}</div>
+function App () {
+  const person = {
+      name: 'Jack',
+      age: 18,
+  };
+  const addAge = (data) => data.age += 1;
+  return <>
+      <div>age = {person.age}</div>
+      <button onClick={() => addAge(person)}>Add Age</button>
+  </>;
 }
 `;
+
 const output = transformReact(input);
 
 console.log(output);

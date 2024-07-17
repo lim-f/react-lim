@@ -3,14 +3,14 @@
  * @Date: 2024-07-14 21:41:12
  * @Description: Coding something
  */
-import { transformVueSFC, isLimSFC } from './vue-lim.es.min';
+import { transformReact, isLimReact } from './react-lim.es.min';
 
 export default function ()  {
     return {
-        name: 'vite:vue-lim',
+        name: 'vite:react-lim',
         transform (code, id) {
-            if (!isLimSFC(code, id)) return null;
-            return { code: transformVueSFC(code) };
+            if (!isLimReact(code, id)) return null;
+            return { code: transformReact(code) };
         }
     };
 }

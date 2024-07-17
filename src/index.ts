@@ -6,4 +6,4 @@
 import { transformReact, isLimReact } from './main';
 export { transformReact, isLimReact } from './main';
 
-export default {transformReact, isLimReact};
+export default { transformReact, isLimReact };

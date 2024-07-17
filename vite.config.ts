@@ -50,7 +50,6 @@ export default defineConfig(({ mode }: {mode: string}) => {
 function geneDevAppConfig (): UserConfig {
     return {
         plugins: [
-            // vue(),
             legacy({
                 targets: [ 'defaults', 'not IE 11' ],
             }),
@@ -103,9 +102,9 @@ const babelPlugin = () => (
 );
 function SDKlibConfig (format: any): Partial<LibraryOptions> {
     return {
-        name: 'VueLim', // 包名
+        name: 'ReactLim', // 包名
         formats: [ format ], // 打包模式，默认是es和umd都打
-        fileName: (format: string) => `vue-lim.${format}.min.js`,
+        fileName: (format: string) => `react-lim.${format}.min.js`,
     };
 }
 /*
