@@ -3,12 +3,21 @@
  * @Date: 2024-04-30 11:57:26
  * @Description: Coding something
 -->
+
+
+
 ## [React Lim](https://github.com/lim-f/react-lim)
 
-Make React easier to use. - (Lim means 'Less is More')
+<div align='center'>
+    <img width='100' src='https://shiyix.cn/images/react.svg'/>
+    
+### Make React easier to use
+
+Lim means 'Less is More'
 
 **[Playground](https://lim-f.github.io/playground/#8) | [Vue-Lim](https://github.com/lim-f/vue-lim) | [中文](https://github.com/lim-f/react-lim/blob/master/README.cn.md)**
 
+</div>
 
 ## A Simple Sample
 
