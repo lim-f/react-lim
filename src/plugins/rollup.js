@@ -4,7 +4,7 @@
  * @Date: 2022-11-25 10:45:54
  * @Description: Coding something
  */
-import { transformReact, isLimReact } from './react-lim.es.min';
+import { transformReact, isLimReact } from './react-lim.es.min.js';
 
 export default function ()  {
 

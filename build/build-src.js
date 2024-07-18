@@ -35,7 +35,7 @@ function main () {
 
     const esName = 'react-lim.es.min.js';
     const iifeName = 'react-lim.iife.min.js';
-    const typeName = 'index.d.ts';
+    const typeName = 'react-lim.es.min.d.ts';
 
     ufs.removeDir(pubDir);
 
@@ -72,6 +72,7 @@ function main () {
         main: esName,
         module: esName,
         types: typeName,
+        type: 'module',
         unpkg: iifeName,
         jsdelivr: iifeName,
         license: 'MIT',
