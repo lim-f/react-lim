@@ -107,7 +107,7 @@ When using `.lim.tsx` or `.lim.jsx` as the file suffix, lim compilation will be 
 
 When using only `.tsx` or `.jsx`, you need to add `'use lim'` or `// use lim` in the file header to enable lim compilation
 
-### 编译Api
+### Api
 
 ```js
 import { transformReact } from 'react-lim';
