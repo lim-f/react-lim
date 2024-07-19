@@ -3,7 +3,7 @@
  * @Date: 2024-07-14 21:41:12
  * @Description: Coding something
  */
-import { transformReact, isLimReact } from './react-lim.min.mjs';
+import { transformReact, isLimReact } from '../react-lim.min.mjs';
 
 export default function ()  {
     return {
