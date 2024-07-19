@@ -1,10 +1,9 @@
-
 /*
  * @Author: chenzhongsheng
  * @Date: 2022-11-25 10:45:54
  * @Description: Coding something
  */
-import { transformReact, isLimReact } from './react-lim.es.min.js';
+import { transformReact, isLimReact } from '../react-lim.min.mjs';
 import path from 'path';
 import fs from 'fs';
 

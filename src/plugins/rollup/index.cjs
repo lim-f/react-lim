@@ -4,15 +4,17 @@
  * @Date: 2022-11-25 10:45:54
  * @Description: Coding something
  */
-import { transformReact, isLimReact } from './react-lim.es.min.js';
+const { transformReact, isLimReact } =  require('../react-lim.min.cjs');
 
-export default function ()  {
+function plugin ()  {
 
     return {
-        name: 'rollup-plugin-prodec',
+        name: 'rollup-plugin-react-lim',
         transform (code, id) {
             if (!isLimReact(code, id)) return null;
             return { code: transformReact(code) };
         }
     };
 }
+module.exports = plugin;
+module.exports.default = plugin;

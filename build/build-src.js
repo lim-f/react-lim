@@ -33,9 +33,10 @@ function main () {
     const pubDir = resolve(__dirname, '../publish');
     const srcDir = resolve(__dirname, '../src/dist');
 
-    const esName = 'react-lim.es.min.js';
-    const iifeName = 'react-lim.iife.min.js';
-    const typeName = 'react-lim.es.min.d.ts';
+    const esName = 'react-lim.min.mjs';
+    const cjsName = 'react-lim.min.cjs';
+    const iifeName = 'react-lim.min.js';
+    const typeName = 'index.d.ts';
 
     ufs.removeDir(pubDir);
 
@@ -43,8 +44,12 @@ function main () {
         titleName: 'react-lim',
         bundleCmd: `npx vite build -m=src_es`,
     });
-
     ufs.copyFile({ src: `${srcDir}/${esName}`, target: `${pubDir}/${esName}`, handler });
+    buildCommon({
+        titleName: 'react-lim',
+        bundleCmd: `npx vite build -m=src_cjs`,
+    });
+    ufs.copyFile({ src: `${srcDir}/${cjsName}`, target: `${pubDir}/${cjsName}`, handler });
 
     buildCommon({
         titleName: 'react-lim',
@@ -59,22 +64,37 @@ function main () {
 
     const pluginDir = resolve(__dirname, '../src/plugins');
     const plugins = fs.readdirSync(pluginDir);
+    ufs.copyFile({ src: `${pluginDir}/plugin.d.ts`, target: `${pubDir}/plugin.d.ts` });
+
+    const exportsMap = {
+        '.': {
+            import: `./${esName}`,
+            require: `./${cjsName}`,
+            types: `./${typeName}`
+        }
+    };
+
     plugins.forEach(name => {
-        if (name === 'plugin.d.ts') return;
-        ufs.copyFile({ src: `${pluginDir}/${name}`, target: `${pubDir}/${name}` });
-        ufs.copyFile({ src: `${pluginDir}/plugin.d.ts`, target: `${pubDir}/${name.replace('.js', '.d.ts')}` });
+        const stat = fs.statSync(resolve(pluginDir, name));
+        if (!stat.isDirectory()) return;
+        ufs.copyDir({ src: `${pluginDir}/${name}`, target: `${pubDir}/${name}` });
+        exportsMap[`./${name}`] = {
+            import: `./${name}/index.mjs`,
+            require: `./${name}/index.cjs`,
+            types: `./plugin.d.ts`
+        };
     });
 
     ufs.writeFile(`${pubDir}/package.json`, JSON.stringify({
         name: 'react-lim',
         version: version,
         description: 'Make React easier to use.',
-        main: esName,
-        module: esName,
-        types: typeName,
-        type: 'module',
-        unpkg: iifeName,
-        jsdelivr: iifeName,
+        main: `./${cjsName}`,
+        module: `./${esName}`,
+        types: `./${typeName}`,
+        unpkg: `./${iifeName}`,
+        jsdelivr: `./${iifeName}`,
+        exports: exportsMap,
         license: 'MIT',
         keywords: [ 'react', 'react-lim' ],
         homepage: 'https://lim-f.github.io/playground/#8',
