@@ -43,10 +43,11 @@
 ## [React Lim](https://github.com/lim-f/react-lim): Make React easier to use (Lim means 'Less is More')
 
 
-**[Playground](https://lim-f.github.io/playground/#8) | [Vue-Lim](https://github.com/lim-f/vue-lim) | [中文](https://github.com/lim-f/react-lim/blob/master/README.cn.md)**
+**[Docs](https://lim-f.github.io/docs) | [Playground](https://lim-f.github.io/playground/#8) | [Vue-Lim](https://github.com/lim-f/vue-lim) | [中文](https://github.com/lim-f/react-lim/blob/master/README.cn.md)**
 
+React-lim is a compilation tool that allows you to get rid of using the Hooks. Here's a simple example
 
-## A Simple Sample
+## [A Simple Sample](https://lim-f.github.io/playground/#8)
 
 ```jsx
 export function Counter() {

@@ -14,11 +14,13 @@
 
 Lim 的含义是 'Less is More'
 
-**[在线体验](https://lim-f.github.io/playground/#8) | [Vue-Lim](https://github.com/lim-f/vue-lim) | [English](https://github.com/lim-f/react-lim)**
+**[文档](https://lim-f.github.io/docs-cn) | [在线体验](https://lim-f.github.io/playground/#8) | [Vue-Lim](https://github.com/lim-f/vue-lim) | [English](https://github.com/lim-f/react-lim)**
 
 </div>
 
-## 一个简单的例子
+react-lim 是一个编译工具，让你可以摆脱使用Hooks。以下是一个简单的例子
+
+## [一个简单的例子](https://lim-f.github.io/playground/#8)
 
 ```jsx
 export function Counter() {
