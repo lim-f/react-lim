@@ -115,19 +115,6 @@ export function isTargetArrayUpdated (path: NodePath<T.MemberExpression>) {
     return false;
 }
 
-export function findNoBindingSource (path: NodePath<T.Node>, name: string) {
-
-    // const binding = path.scope.getBinding(name);
-    // if (!binding) return;
-
-    // const
-
-    // console.log(binding.path.parentPath.toString(), name);
-
-    // debugger;
-
-}
-
 export function findTopMemberExp (path: NodePath<T.Node>) {
 
     let prev: NodePath<T.MemberExpression>|null = null;
