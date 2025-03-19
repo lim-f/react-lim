@@ -33,6 +33,8 @@ export class JSXParser {
             Identifier: (path) => {
                 this.checkListItemUpdated(path);
             },
+            // 'JSXAttribute': (path) => {
+            // },
 
             'FunctionDeclaration|ArrowFunctionExpression': {
                 enter: (path: NodePath<FunctionDeclaration|ArrowFunctionExpression>) => {
